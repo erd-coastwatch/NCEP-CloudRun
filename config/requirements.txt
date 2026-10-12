@@ -1,0 +1,7 @@
+netCDF4==1.7.4
+xarray==2026.9.0
+pydap==3.5.11
+numpy==2.3.5
+google-cloud-storage==3.17.0
+requests==2.34.2
+google-cloud-secret-manager==2.31.0
