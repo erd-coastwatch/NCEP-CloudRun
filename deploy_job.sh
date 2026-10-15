@@ -42,7 +42,7 @@ gcloud run jobs deploy "$JOB_NAME" --project "$PROJECT_ID" --region "$REGION" \
   --set-env-vars "$envs" ${secrets[@]+"${secrets[@]}"}
 if [[ "$JOB_MODE" == production ]]; then
   number="$(gcloud projects describe "$PROJECT_ID" --format='value(projectNumber)')"
-  scheduler_args=(--project "$PROJECT_ID" --location "$REGION" --schedule '0 9 * * *' \
+  scheduler_args=(--project "$PROJECT_ID" --location "$REGION" --schedule '37 9 * * *' \
     --time-zone America/Los_Angeles \
     --uri "https://${REGION}-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/${number}/jobs/${JOB_NAME}:run" \
     --http-method POST --oauth-service-account-email "$SERVICE_ACCOUNT" \
